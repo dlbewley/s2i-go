@@ -32,6 +32,9 @@ items:
     - type: "Generic"
       generic:
         secret: "9bcaf1a9761f4fd3b8a0eec0a22e2d5a" 
+    - type: GitHub
+      github:
+        secret: hV3880AbK1CoCJdn7GMc6FfNuJkJ7C3wgJAu4eh5
 
 - kind: BuildConfig
   metadata:
@@ -62,6 +65,9 @@ items:
     - type: "Generic"
       generic:
         secret: "9bcaf1a9761f4fd3b8a0eec0a22e2d5a" 
+    - type: GitHub
+      github:
+        secret: hV3880AbK1CoCJdn7GMc6FfNuJkJ7C3wgJAu4eh5
 
 - kind: BuildConfig
   metadata:
@@ -92,6 +98,9 @@ items:
     - type: "Generic"
       generic:
         secret: "9bcaf1a9761f4fd3b8a0eec0a22e2d5a" 
+    - type: GitHub
+      github:
+        secret: hV3880AbK1CoCJdn7GMc6FfNuJkJ7C3wgJAu4eh5
 
 - kind: BuildConfig
   metadata:
@@ -122,24 +131,27 @@ items:
     - type: "Generic"
       generic:
         secret: "9bcaf1a9761f4fd3b8a0eec0a22e2d5a" 
+    - type: GitHub
+      github:
+        secret: hV3880AbK1CoCJdn7GMc6FfNuJkJ7C3wgJAu4eh5
 
 - kind: BuildConfig
   metadata:
-    name: go-16-centos7-develop
+    name: go-17-centos7-develop
     annotations:
-      description: Defines how to build go-16-centos7-develop test s2i builder image
+      description: Defines how to build go-17-centos7-develop test s2i builder image
       tags: dlbewley,develop,test
   spec:
     output:
       to:
         kind: ImageStreamTag
-        name: go:1.6-develop
+        name: go:1.7-develop
     source:
       git:
         uri: https://github.com/dlbewley/s2i-go.git
         ref: develop
       type: Git
-      contextDir: "1.6"
+      contextDir: "1.7"
     strategy:
       type: Docker
       dockerStrategy:
@@ -153,4 +165,7 @@ items:
     - type: "Generic"
       generic:
         secret: "9bcaf1a9761f4fd3b8a0eec0a22e2d5a" 
+    - type: GitHub
+      github:
+        secret: hV3880AbK1CoCJdn7GMc6FfNuJkJ7C3wgJAu4eh5
 
