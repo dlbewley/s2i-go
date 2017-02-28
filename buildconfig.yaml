@@ -1,0 +1,156 @@
+---
+kind: BuildConfigList
+apiVersion: v1
+metadata: {}
+items:
+- kind: BuildConfig
+  metadata:
+    name: go-17-centos7
+    annotations:
+      description: Defines how to build go-17-centos7 s2i builder image
+      tags: dlbewley
+  spec:
+    output:
+      to:
+        kind: ImageStreamTag
+        name: go:1.7
+    source:
+      git:
+        uri: https://github.com/dlbewley/s2i-go.git
+      type: Git
+      contextDir: "1.7"
+    strategy:
+      type: Docker
+      dockerStrategy:
+        noCache: true
+    triggers:
+    - type: "imagechange"
+      imageChange:
+        from:
+          kind: "ImageStreamTag"
+          name: "openshift/base-centos7:latest"
+    - type: "Generic"
+      generic:
+        secret: "9bcaf1a9761f4fd3b8a0eec0a22e2d5a" 
+
+- kind: BuildConfig
+  metadata:
+    name: go-16-centos7
+    annotations:
+      description: Defines how to build go-16-centos7 s2i builder image
+      tags: dlbewley
+  spec:
+    output:
+      to:
+        kind: ImageStreamTag
+        name: go:1.6
+    source:
+      git:
+        uri: https://github.com/dlbewley/s2i-go.git
+      type: Git
+      contextDir: "1.6"
+    strategy:
+      type: Docker
+      dockerStrategy:
+        noCache: true
+    triggers:
+    - type: "imagechange"
+      imageChange:
+        from:
+          kind: "ImageStreamTag"
+          name: "openshift/base-centos7:latest"
+    - type: "Generic"
+      generic:
+        secret: "9bcaf1a9761f4fd3b8a0eec0a22e2d5a" 
+
+- kind: BuildConfig
+  metadata:
+    name: go-15-centos7
+    annotations:
+      description: Defines how to build go-15-centos7 s2i builder image
+      tags: dlbewley
+  spec:
+    output:
+      to:
+        kind: ImageStreamTag
+        name: go:1.5
+    source:
+      git:
+        uri: https://github.com/dlbewley/s2i-go.git
+      type: Git
+      contextDir: "1.5"
+    strategy:
+      type: Docker
+      dockerStrategy:
+        noCache: true
+    triggers:
+    - type: "imagechange"
+      imageChange:
+        from:
+          kind: "ImageStreamTag"
+          name: "openshift/base-centos7:latest"
+    - type: "Generic"
+      generic:
+        secret: "9bcaf1a9761f4fd3b8a0eec0a22e2d5a" 
+
+- kind: BuildConfig
+  metadata:
+    name: go-14-centos7
+    annotations:
+      description: Defines how to build go-14-centos7 s2i builder image
+      tags: dlbewley
+  spec:
+    output:
+      to:
+        kind: ImageStreamTag
+        name: go:1.4
+    source:
+      git:
+        uri: https://github.com/dlbewley/s2i-go.git
+      type: Git
+      contextDir: "1.4"
+    strategy:
+      type: Docker
+      dockerStrategy:
+        noCache: true
+    triggers:
+    - type: "imagechange"
+      imageChange:
+        from:
+          kind: "ImageStreamTag"
+          name: "openshift/base-centos7:latest"
+    - type: "Generic"
+      generic:
+        secret: "9bcaf1a9761f4fd3b8a0eec0a22e2d5a" 
+
+- kind: BuildConfig
+  metadata:
+    name: go-16-centos7-develop
+    annotations:
+      description: Defines how to build go-16-centos7-develop test s2i builder image
+      tags: dlbewley,develop,test
+  spec:
+    output:
+      to:
+        kind: ImageStreamTag
+        name: go:1.6-develop
+    source:
+      git:
+        uri: https://github.com/dlbewley/s2i-go.git
+        ref: develop
+      type: Git
+      contextDir: "1.6"
+    strategy:
+      type: Docker
+      dockerStrategy:
+        noCache: true
+    triggers:
+    - type: "imagechange"
+      imageChange:
+        from:
+          kind: "ImageStreamTag"
+          name: "openshift/base-centos7:latest"
+    - type: "Generic"
+      generic:
+        secret: "9bcaf1a9761f4fd3b8a0eec0a22e2d5a" 
+
