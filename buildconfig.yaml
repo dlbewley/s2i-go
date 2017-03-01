@@ -22,7 +22,7 @@ items:
     strategy:
       type: Docker
       dockerStrategy:
-        dockerfilePath: "1.7"
+        dockerfilePath: "1.7/Dockerfile"
         noCache: true
     triggers:
     - type: "imagechange"
@@ -56,7 +56,7 @@ items:
     strategy:
       type: Docker
       dockerStrategy:
-        dockerfilePath: "1.6"
+        dockerfilePath: "1.6/Dockerfile"
         noCache: true
     triggers:
     - type: "imagechange"
@@ -90,7 +90,7 @@ items:
     strategy:
       type: Docker
       dockerStrategy:
-        dockerfilePath: "1.5"
+        dockerfilePath: "1.5/Dockerfile"
         noCache: true
     triggers:
     - type: "imagechange"
@@ -124,7 +124,7 @@ items:
     strategy:
       type: Docker
       dockerStrategy:
-        dockerfilePath: "1.4"
+        dockerfilePath: "1.4/Dockerfile"
         noCache: true
     triggers:
     - type: "imagechange"
@@ -159,7 +159,7 @@ items:
     strategy:
       type: Docker
       dockerStrategy:
-        dockerfilePath: "1.7"
+        dockerfilePath: "1.7/Dockerfile"
         noCache: true
     triggers:
     - type: "imagechange"
