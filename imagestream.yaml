@@ -1,0 +1,89 @@
+---
+kind: ImageStreamList
+apiVersion: v1
+metadata: {}
+
+items:
+- kind: ImageStream
+  apiVersion: v1
+  metadata:
+    name: go
+  spec:
+    tags:
+    - name: latest
+      annotations:
+        description: Build and run Go (latest) applications
+        iconClass: icon-golang
+        tags: builder,golang,go,dlbewley
+        supports: go,golang
+        sampleRepo: https://github.com/dlbewley/go-ex.git
+      from:
+        kind: ImageStreamTag
+        name: '1.7'
+    - name: '1.7'
+      annotations:
+        description: Build and run Go 1.7 applications
+        iconClass: icon-golang
+        tags: builder,golang,go,dlbewley
+        supports: go:1.7,go
+        version: '1.7'
+        sampleRepo: https://github.com/dlbewley/go-ex.git
+      from:
+        kind: DockerImage
+        name: dlbewley/go-17-centos7:latest
+    - name: '1.6'
+      annotations:
+        description: Build and run Go 1.6 applications
+        iconClass: icon-golang
+        tags: builder,golang,go,dlbewley
+        supports: go:1.6,go
+        version: '1.6'
+        sampleRepo: https://github.com/dlbewley/go-ex.git
+      from:
+        kind: DockerImage
+        name: dlbewley/go-16-centos7:latest
+    - name: '1.5'
+      annotations:
+        description: Build and run Go 1.5 applications
+        iconClass: icon-golang
+        tags: builder,golang,go,dlbewley
+        supports: go:1.5,go
+        version: '1.5'
+        sampleRepo: https://github.com/dlbewley/go-ex.git
+      from:
+        kind: DockerImage
+        name: dlbewley/go-15-centos7:latest
+    - name: '1.4'
+      annotations:
+        description: Build and run Go 1.4 applications
+        iconClass: icon-golang
+        tags: builder,golang,go,dlbewley
+        supports: go:1.4,go
+        version: '1.4'
+        sampleRepo: https://github.com/dlbewley/go-ex.git
+      from:
+        kind: DockerImage
+        name: dlbewley/go-14-centos7:latest
+
+    - name: develop
+      annotations:
+        description: Build and run Go (latest) applications (develop, test instance)
+        iconClass: icon-golang
+        tags: builder,golang,go,develop,test,dlbewley
+        supports: go,golang
+        sampleRepo: https://github.com/dlbewley/go-ex.git
+      from:
+        kind: ImageStreamTag
+        name: '1.7-develop'
+    - name: '1.7-develop'
+      annotations:
+        description: Build and run Go 1.7 applications (develop, test instance)
+        iconClass: icon-golang
+        tags: builder,golang,go,develop,test,dlbewley
+        supports: go:1.7,go
+        version: '1.7'
+        sampleRepo: https://github.com/dlbewley/go-ex.git
+      from:
+        kind: DockerImage
+        name: dlbewley/go-17-centos7:develop
+
